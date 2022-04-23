@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login', [AuthController::class, 'login']);
-Route::get('registration', [AuthController::class, 'registration']);
+Route::get('login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
 Route::post('/register-user', [AuthController::class, 'registeruser'])
 ->name('register-user');
+Route::post('/login-user',[AuthController::class,'loginuser'])->name('login-user');
+Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('IsLoggedIn');
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/datalist', [DataController::class, 'DataList']);
+// Route::get('addItem','addItem');
