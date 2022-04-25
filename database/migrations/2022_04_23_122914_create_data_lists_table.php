@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('data_lists', function (Blueprint $table) {
             $table->id();
-            $table->String('name');
-            $table->String('manufacture by');
-            $table->String('manufacture date');
-            $table->String('expiry date');
-            $table->String('price');
-            $table->String('weight');
-            $table->String('product id');
+            $table->string('name');
+            $table->string('manufacture_by');
+            $table->string('manufacture_date');
+            $table->string('expiry_date');
+            $table->string('price');
+            $table->string('weight');
+            $table->string('product_id');
             $table->timestamps();
         });
     }

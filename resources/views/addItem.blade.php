@@ -26,38 +26,39 @@
                     <div class="form-group">
                         <label for="name">Enter product Name</label>
                         <input type="text" class="form-control" placeholder="Enter Name Here " name="name" value="{{old('name')}}">
-                        <span class="text-danger">@error ('name'){{$message}}@enderror</span>
+                        <span class="text-danger">@error ('name'){{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="manufacture">Product manufacture name</label>
-                        <input type="text" class="form-control" placeholder="manufacture name " name="name" value="{{old('manufacture')}}">
-                        <!-- <span class="text-danger">@error ('manufacture'){{$message}}@enderror</span> -->
+                        <label for="manufacture_by">Enter manufacture Name</label>
+                        <input type="text" class="form-control" placeholder="Enter manufacture Here " name="manufacture_by" value="{{old('manufacture_by')}}">
+                        <span class="text-danger">@error ('manufacture_by'){{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="manufacture date">Manufacture Ddate</label>
-                        <input type="text" class="form-control" placeholder="Enter manufactyre date " name="name" value="{{old('manufacture date')}}">
-                        <!-- <span class="text-danger">@error ('name'){{$message}}@enderror</span> -->
+                        <label for="manufacture_date">Enter Manufacture Date</label>
+                        <input type="text" class="form-control" placeholder="Enter manufacture Date " name="manufacture_date" value="{{old('manufacture_date')}}">
+                        <!-- <span class="text-danger">@error ('name'){{$message}} @enderror</span> -->
                     </div>
                     <div class="form-group">
-                        <label for="expiry date">Expiry Date</label>
-                        <input type="text" class="form-control" placeholder="Enter Expiry Date " name="name" value="{{old('expiry date')}}">
-                        <!-- <span class="text-danger">@error ('name'){{$message}}@enderror</span> -->
+                        <label for="expiry_date">Enter Expiry Date</label>
+                        <input type="text" class="form-control" placeholder="Enter Expiry Date " name="expiry_date" value="{{old('expiry_date')}}">
+                        <!-- <span class="text-danger">@error ('name'){{$message}} @enderror</span> -->
                     </div>
                     <div class="form-group">
-                        <label for="price">Enter Product Price</label>
-                        <input type="text" class="form-control" placeholder="Enter Product price " name="name" value="{{old('price')}}">
-                        <!-- <span class="text-danger">@error ('price'){{$message}}@enderror</span> -->
+                        <label for="price">Enter Price</label>
+                        <input type="text" class="form-control" placeholder="Enter Price " name="expiry_date" value="{{old('price')}}">
+                        <span class="text-danger">@error ('price'){{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
                         <label for="weight">Enter Product Weight</label>
-                        <input type="text" class="form-control" placeholder="Enter Product weight " name="name" value="{{old('weight')}}">
-                        <!-- <span class="text-danger">@error ('name'){{$message}}@enderror</span> -->
+                        <input type="text" class="form-control" placeholder="Enter Product Weight " name="weight" value="{{old('weight')}}">
+                        <!-- <span class="text-danger">@error ('name'){{$message}} @enderror</span> -->
                     </div>
                     <div class="form-group">
-                        <label for="id">Enter Product Id</label>
-                        <input type="text" class="form-control" placeholder="Enter product id " name="name" value="{{old('id')}}">
-                        <!-- <span class="text-danger">@error ('id'){{$message}}@enderror</span> -->
+                        <label for="product_id">Enter Product Id</label>
+                        <input type="text" class="form-control" placeholder="Enter Product Id " name="product_id" value="{{old('product_id')}}">
+                        <span class="text-danger">@error ('product_id'){{$message}} @enderror</span>
                     </div>
+
                     <br>
                     <div class="form-group">
                         <button class="btn btn-block btn-primary" type="submit">Add Item</button>
@@ -73,4 +74,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </html>
-
