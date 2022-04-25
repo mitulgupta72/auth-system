@@ -26,5 +26,8 @@ Route::post('/register-user', [AuthController::class, 'registeruser'])
 Route::post('/login-user',[AuthController::class,'loginuser'])->name('login-user');
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('IsLoggedIn');
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/datalist', [DataController::class, 'DataList']);
+Route::get('/addtolist', [DataController::class, 'AddToList']);
 // Route::get('addItem','addItem');
+
+Route::post('/adding-item', [DataController::class, 'addingitem'])
+->name('adding-item');
