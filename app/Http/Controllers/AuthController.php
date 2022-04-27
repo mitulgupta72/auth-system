@@ -35,8 +35,10 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $res = $user->save();
         if ($res) {
+            // echo 'done';
             return back()->with('sucess', 'you have registered sucessfully');
         } else {
+            // echo 'failed';
             return back()->with('fail', 'something went wrong');
         }
     }
@@ -51,7 +53,7 @@ class AuthController extends Controller
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
                 $request->session()->put('loginId', $user->id);
-                return redirect('dashboard');
+                return redirect('list');
             } else {
                 return back()->with('fail', 'Password not matches');
             }

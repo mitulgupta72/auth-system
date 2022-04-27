@@ -45,8 +45,8 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Enter Price</label>
-                        <input type="text" class="form-control" placeholder="Enter Price " name="expiry_date" value="{{old('price')}}">
-                        <span class="text-danger">@error ('price'){{$message}} @enderror</span>
+                        <input type="text" class="form-control" placeholder="Enter Price " name="price" value="{{old('price')}}">
+                        <!-- <span class="text-danger">@error ('price'){{$message}} @enderror</span> -->
                     </div>
                     <div class="form-group">
                         <label for="weight">Enter Product Weight</label>
@@ -64,7 +64,7 @@
                         <button class="btn btn-block btn-primary" type="submit">Add Item</button>
                     </div>
                     <br>
-                    <a href="login">All Items List</a>
+                    <a href="#">All Items List</a>
                 </form>
 
             </div>

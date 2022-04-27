@@ -15,7 +15,7 @@
             <div class="col-md-4 col-md-offset-4" style="margin-top:20px;">
                 <h4>Login</h4>
                 <hr>
-                <form action="{{route('login-user')}}" method="post">
+                <form action="{{Route('login-user')}}" method="post">
                     @if(Session::has('sucess'))
                         <alert class="alert-success">{{Session::get('sucess')}}</alert>
                     @endif

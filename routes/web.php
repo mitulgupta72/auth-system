@@ -15,11 +15,11 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('/', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
 Route::post('/register-user', [AuthController::class, 'registeruser'])
 ->name('register-user');
@@ -31,3 +31,9 @@ Route::get('/addtolist', [DataController::class, 'AddToList']);
 
 Route::post('/adding-item', [DataController::class, 'addingitem'])
 ->name('adding-item');
+
+Route::get('/list', [DataController::class, 'list'])->middleware('IsLoggedIn');
+
+
+
+

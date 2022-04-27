@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DataList;
+use App\Models\Item;
+use App\Models\User;
 use Symfony\Component\HttpFoundation\Session\Session;
-use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Hash;
 
 class DataController extends Controller
 {
@@ -20,11 +21,11 @@ class DataController extends Controller
             'name' => 'required',
             'manufacture_by' => 'required',
             'price' => 'required',
-            'product_id' => 'required',
+            'product_id' => 'required'
         ]);
 
 
-            $data = new DataList();
+            $data = new Item();
             $data->name=$request->name;
             $data->manufacture_by=$request->manufacture_by;
             $data->manufacture_date=$request->manufacture_date;
@@ -35,11 +36,26 @@ class DataController extends Controller
             $res=$data->save();
 
             if ($res) {
-                return back()->with('sucess', 'Item Added sucessfully');
+                echo 'done';
+                // return back()->with('sucess', 'you have registered sucessfully');
             } else {
-                return back()->with('fail', 'something went wrong');
+                echo 'failed';
+                // return back()->with('fail', 'something went wrong');
             }
 
+    }
+    public function list()
+    {   $dataa=array();
+        if(Session()->has('loginId')){
+        $dataa = User::where('id', '=', Session()->get('loginId'))->first();
 
+        $data = Item::all();
+    }
+        // return $data;
+        // $data = array();
+        // if (Session()->has('loginId')) {
+        //     $data = Item::all();
+        // }
+        return view('list', ['data'=>$data],compact('dataa'));
     }
 }

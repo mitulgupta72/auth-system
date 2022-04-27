@@ -42,7 +42,7 @@
                         <button class="btn btn-block btn-primary" type="submit">Register</button>
                     </div>
                     <br>
-                    <a href="login">Already registered !! Login Here</a>
+                    <a href="/">Already registered !! Login Here</a>
                 </form>
 
             </div>
