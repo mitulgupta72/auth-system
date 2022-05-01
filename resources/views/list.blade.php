@@ -36,8 +36,9 @@
                             <td>{{$item['price']}}</td>
                             <td>{{$item['weight']}}</td>
                             <td>{{$item['product_id']}}</td>
+                            <!-- <td>{{$item->id}}</td> -->
                              <td>
-                                 <a href="#">Print</a>
+                                 <a href="{{url('/print/'.$item->id)}}" class="btn btn-success py=1">Print</a>
                             </td>
                         </tr>
                     </tbody>
@@ -47,7 +48,7 @@
                 <br>
                 <td>user email: {{$dataa->email}} </td>
                 <br>
-                <td><a href="logout">logout</a></td>
+                <td><a href="logout" class="btn btn-success ">logout</a></td>
 
             </div>
         </div>

@@ -73,7 +73,8 @@ class AuthController extends Controller
     {
         if (Session()->has('loginId')) {
             Session()->pull('loginId');
-            return redirect('login');
+            return redirect('/');
         }
     }
+    
 }

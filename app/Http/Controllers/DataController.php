@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\User;
+use Barryvdh\DomPDF\PDF;
 use Symfony\Component\HttpFoundation\Session\Session;
+
 // use Illuminate\Support\Facades\Hash;
 
 class DataController extends Controller
@@ -57,5 +59,23 @@ class DataController extends Controller
         //     $data = Item::all();
         // }
         return view('list', ['data'=>$data],compact('dataa'));
+    }
+
+    public function print($order_id){
+
+        if (Item::where('id',$order_id)->exists()){
+            $orders=Item::find($order_id);
+            // return view('print',compact('orders'));
+            $data = [
+                'orders' => $orders,
+            ];
+            $pdf = app('dompdf.wrapper');
+            $pdf ->loadView('print', $data);
+    
+            return $pdf->download('fundaofwebit.pdf');
+        }
+        else{
+            return redirect()->back()->with('status','Item not found');
+        }
     }
 }

@@ -34,6 +34,7 @@ Route::post('/adding-item', [DataController::class, 'addingitem'])
 
 Route::get('/list', [DataController::class, 'list'])->middleware('IsLoggedIn');
 
+Route::get('/print/{order_id}',[DataController::class,'print']);
 
 
 
